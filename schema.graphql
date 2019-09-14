@@ -1,0 +1,67 @@
+scalar Upload
+
+
+
+directive @auth on FIELD_DEFINITION | FIELD
+
+type Query {
+    getAllProducts:[Product]!@auth
+    getIdProduct(id:ID):Product
+}
+
+type Mutation {
+    createUser(user:inputUser!):User
+    login(user:inputLogin!):Auth!
+    createProduct(event:inputProduct!):Product! @auth
+    addPhoto(photo:Upload!):String @auth
+}
+
+type User {
+    _id:ID!
+    name:String!
+    email:String!
+}
+type Clothes{
+    sotre_name:String
+    name_product:String
+    c_type:String
+    color: String
+    price: Int
+    talla: String
+    gender:String
+    estilo:String
+    url: String
+}
+type Auth {
+    status:String!
+    token:String!
+}
+
+type Product{
+    _id:ID!
+    marca:String
+    type:String
+    color:String
+    price:Int
+    size:String
+}
+
+input inputUser {
+    name:String!
+    email:String!
+    password:String!
+}
+
+input inputLogin {
+    email:String!
+    password:String!
+}
+
+input inputProduct {
+    marca:String!
+    type:String!
+    color:String
+    price:Int
+    size:String
+    
+}

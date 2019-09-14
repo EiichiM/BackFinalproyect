@@ -1,0 +1,21 @@
+{
+  "name": "graphback",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "3.0.6",
+    "cloudinary": "^1.14.0",
+    "dotenv": "^8.1.0",
+    "graphql-tools": "^4.0.5",
+    "graphql-yoga": "^1.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.10"
+  }
+}
